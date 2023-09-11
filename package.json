@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/Rinkal-M-Patel/Profile_Generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.6"
+    "inquirer": "^7.3.3"
   }
 }
