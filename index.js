@@ -49,3 +49,41 @@ function promptManager() {
       promptMenu();
     });
 }
+
+// Function to prompt for intern's information
+function promptIntern() {
+    inquirer
+      .prompt([
+        {
+          type: 'input',
+          name: 'name',
+          message: "Enter the intern's name:",
+        },
+        {
+          type: 'input',
+          name: 'id',
+          message: "Enter the intern's employee ID:",
+        },
+        {
+          type: 'input',
+          name: 'email',
+          message: "Enter the intern's email address:",
+        },
+        {
+          type: 'input',
+          name: 'school',
+          message: "Enter the intern's school:",
+        },
+      ])
+      .then((answers) => {
+        const intern = new Intern(
+          answers.name,
+          answers.id,
+          answers.email,
+          answers.school
+        );
+        teamMembers.push(intern);
+        promptMenu();
+      });
+  }
+  
