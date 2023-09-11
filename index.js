@@ -86,4 +86,43 @@ function promptIntern() {
         promptMenu();
       });
   }
+  // Function to prompt the user with the menu
+function promptMenu() {
+    inquirer
+      .prompt([
+        {
+          type: 'list',
+          name: 'choice',
+          message: 'Select an option:',
+          choices: ['Add an engineer', 'Add an intern', 'Finish building the team'],
+        },
+      ])
+      .then((answers) => {
+        switch (answers.choice) {
+          case 'Add an engineer':
+            promptEngineer();
+            break;
+          case 'Add an intern':
+            promptIntern();
+            break;
+          case 'Finish building the team':
+            generateHTML();
+            break;
+        }
+      });
+  }
+  
+  // Function to generate and save HTML
+  function generateHTML() {
+    const html = render(teamMembers);
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR);
+    }
+    fs.writeFileSync(outputPath, html);
+    console.log(`Team HTML file saved to ${outputPath}`);
+  }
+  
+  // Start the application by prompting for the manager's information
+  promptManager();
+  
   
