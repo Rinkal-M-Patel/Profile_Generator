@@ -50,6 +50,44 @@ function promptManager() {
     });
 }
 
+
+// Function to prompt for engineer's information
+function promptEngineer() {
+    inquirer
+      .prompt([
+        {
+          type: 'input',
+          name: 'name',
+          message: "Enter the engineer's name:",
+        },
+        {
+          type: 'input',
+          name: 'id',
+          message: "Enter the engineer's employee ID:",
+        },
+        {
+          type: 'input',
+          name: 'email',
+          message: "Enter the engineer's email address:",
+        },
+        {
+          type: 'input',
+          name: 'github',
+          message: "Enter the engineer's GitHub username:",
+        },
+      ])
+      .then((answers) => {
+        const engineer = new Engineer(
+          answers.name,
+          answers.id,
+          answers.email,
+          answers.github
+        );
+        teamMembers.push(engineer);
+        promptMenu();
+      });
+  }
+
 // Function to prompt for intern's information
 function promptIntern() {
     inquirer
