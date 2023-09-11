@@ -66,7 +66,7 @@ Run the Application:
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Team generator](./src/myTeam.png)
 
 
 
@@ -95,7 +95,7 @@ During the development of this project, I learned the following:
 
 ## Demo
 
-Insert gif or link to demo
+[Video link of Project](https://drive.google.com/file/d/1v1w97qBdToLks-T5zlW1x9i4NSDHqsVh/view)
 
 
 ## License
